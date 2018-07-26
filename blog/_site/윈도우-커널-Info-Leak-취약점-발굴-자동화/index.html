@@ -1,0 +1,519 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.12.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>윈도우 커널  Info Leak 취약점 발굴 자동화 - Fandu’s Blog</title>
+<meta name="description" content="원문 : 링크">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Fandu's Blog">
+<meta property="og:title" content="윈도우 커널  Info Leak 취약점 발굴 자동화">
+<meta property="og:url" content="http://0.0.0.0:4000/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%BB%A4%EB%84%90-Info-Leak-%EC%B7%A8%EC%95%BD%EC%A0%90-%EB%B0%9C%EA%B5%B4-%EC%9E%90%EB%8F%99%ED%99%94/">
+
+
+  <meta property="og:description" content="원문 : 링크">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-07-26T14:35:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%BB%A4%EB%84%90-Info-Leak-%EC%B7%A8%EC%95%BD%EC%A0%90-%EB%B0%9C%EA%B5%B4-%EC%9E%90%EB%8F%99%ED%99%94/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Fandu",
+      "url": "http://0.0.0.0:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Fandu's Blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Fandu's Blog</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/" >Quick-Start Guide</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/9446937.png" alt="Fandu" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Fandu</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        여전히 다짐만 하는 최오리의 끄적끄적
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Korea</span>
+        </li>
+      
+
+      
+        <li>
+          <a href="http://fandu.tistory.com" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/kwangjun.choi.9" itemprop="sameAs">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="윈도우 커널  Info Leak 취약점 발굴 자동화">
+    <meta itemprop="description" content="원문 : 링크">
+    <meta itemprop="datePublished" content="July 26, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">윈도우 커널  Info Leak 취약점 발굴 자동화
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>원문 : <a href="https://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/">링크</a></p>
+
+<h2 id="시작">시작</h2>
+
+<p>2017년 6월에 우리가 이전에 제보한 6개의 커널 Info Leak 취약점을 패치하였고 글 뒷 부분에 이에 대한 자세한 내용이 나와있다. 작년에 필자는 JS를 사용하여 어떻게 커널을 퍼징하는 지 시연하였다. 오늘날 우리들이 가져온 것은 퍼징에 의존하지 않고 커널 Info Leak 취약점을 자동으로 찾아주는 것이다. 최근 몇 달 동안의 작업들 중 일부이며 커널에서 Info Leak 유형의 취약점을 어떻게 찾는 지에 대해 얘기해보도록 하겠다.</p>
+
+<h2 id="배경">배경</h2>
+
+<p>Windows vista 이후에 마이크로소프트는 커널에 디폴트로 ASLR을 활성화 해두었고 이를 KASLR이라고 불렀다. KASLR은 모듈의 로딩 주소, 커널 오브젝트의 주소를 렌덤마이징하여 미티게이션을 강화하였다.</p>
+
+<p>윈도우8 이후에는 이 보안 특성이 한단계 강화되었다.
+nt!ExIsRestrictedCaller를 도입하여 Low Integrity인 프로그램이 모듈 주소, 커널 오브젝트 주소 등 핵심 정보를 릭할 수 있는 함수에 대한 호출을 막았다.</p>
+
+<p>하지만 아래 함수들은 예외이다.</p>
+
+<p>NtQuerySystemInformation</p>
+<ul>
+  <li>SystemModuleInformation</li>
+  <li>SystemModuleInformationEx</li>
+  <li>SystemLocksInformation</li>
+  <li>SystemStackTraceInformation</li>
+  <li>SystemHandleInformation</li>
+  <li>SystemExtendedHandleInformation</li>
+  <li>SystemObjectInformation</li>
+  <li>SystemBigPoolInformation</li>
+  <li>SystemSessionBigPoolInformation</li>
+  <li>SystemProcessInformation</li>
+  <li>SystemFullProcessInformation</li>
+</ul>
+
+<p>NtQueryInfomationThread
+NtQueryInfomationProcess</p>
+
+<p>위 함수들은 사용하는 것은 커널의 정상적인 기능으로써 커널 모듈 주소와 커널 오브젝트 주소를 획득하는 전통적인 방법이다.
+그러나 integrity가 medium 이하인 프로그램은 윈도우 8 이후의 운영체제에서는 호출을 실패하게 된다.
+ksalr은 미티게이션 중 하나로써 이것의 목적 중 하나는 일반적인 ROP-CHAIN을 제작하기 더욱 어렵게 하는 것이다.</p>
+
+<p>익스플로잇을 하는 사람으로써 얘기하자면 Info Leak 취약점을 찾아서 필요한 모듈의 주소를 직접적으로 릭해오는 것이 KASLR을 우회할 수 있는 방법이다.</p>
+
+<h2 id="특징">특징</h2>
+
+<p>커널 취약점의 한 종류로써 발굴하는 과정 중에 조금 특별한 부분이 있다. 예를 들어서 전통적인 메모리 커럽션 취약점은 취약점 자체가 시스템의 정상적인 실행에 영향을 주기 때문에 verifier 등 툴을 사용하여 아주 편리하게 크래시를 잡을 수 있다.</p>
+
+<p>그러나 Info Leak 취약점의 경우, 이상이 발생하지 않으며 시스템의 정상적인 실행에도 영향을 주지 않는다. 따라서 이를 발견하기에는 비교적 어렵다.</p>
+
+<p>취약점은 객관적으로 존재하지만 우리가 해야할 것은 최소한의 노력으로 이들을 발견하는 것이다.</p>
+
+<h2 id="발굴-아이디어">발굴 아이디어</h2>
+
+<p>취약점이 발생할 때, 커널은 핵심적인 정보를 유저모드 메모리에 저장한다. 만약 우리가 모든 커널 모드에서 유저모드 주소로 쓰는 작업을 모니터링한다면 이 작업을 캡처할 수 있을 것이다.</p>
+
+<p>시스템에서는 이러한 기능을 제공하지 않기 때문에 @pjf의 하드웨어 가상화 기반의 발굴 프레임워크(???)를 통해 이를 구현할 수 있다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/DigTool.png" alt="사진1" /></p>
+
+<p>타겟 시스템 자체의 작업들을 간섭하지 않기 위해서 필자는 가상머신에서 모니터링을 진행하였으며 필요한 정보를 획득하고 이를 log에 저장한 다음 다시 이를 호스트 컴퓨터에서 분석하였다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/loader.png" alt="사진2" /></p>
+
+<p>호스트컴에서 로그를 디코딩하고 심볼을 업로드한 다음 일부 처리를 진행하였다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/analyze.png" alt="사진3" /></p>
+
+<p>그럼 아래와 같은 로그를 획득할 수 있다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/log.png" alt="사진4" /></p>
+
+<h2 id="2차-분석">2차 분석</h2>
+
+<p>이제 우리는 실제 실행 과정에서 커널이 유저모드 메모리에 쓰는 모든 기록들을 가지고 있다. 여기에서 대부분은 정상적인 기능일 테지만 우리는 필요없는 것들은 제외하고 핵심 정보들을 골라내야 한다. 여기에서는 주로 두 가지 기법을 사용한다.</p>
+
+<h3 id="커널-스택-포이즈닝">커널 스택 포이즈닝</h3>
+
+<p>타겟 데이터를 포이즈닝 혹은 오염시키는 것은 흔한 아이디어이다. 네트워크 공격과 방어쪽으로 보면 ARP와 DNS 버퍼에 대한 포이즈닝이 존재한다.—&gt; 뭔소리지 뭐라고 번역해야하지</p>
+
+<p>여기에서 얘기하는 커널 스택 오렴은 사용되지 않은 커널 스택 공간 전체를 오염시킨다는 것이다. 만약 어떤 커널 스택 상에 초기화되지 않은 값이 존재하고 이 변수를 유저모드 메모리에 쓰게되면 이 때 써지는 데이터가 바로 우리가 표기한 magic value가 될 것이다. 이 magic value를 찾아내 기록하는 것이 릭이 발생하는 지점이다.</p>
+
+<p>동시에 필자는 j00ru가 BochsPwn에도 유사한 기술을 사용한 것을 발견하였다.</p>
+
+<h2 id="kifastcallentry-hook">KiFastCallEntry Hook</h2>
+
+<p>기회가 될 때마다 커널 스택을 오염시키기 위해서 필자는 KiFastCallEntry를 후깅하였다. 이를 통해 매번 시스템 호출이 발생될 때 현재 스택 밑에 모든 남은 스택 공간을 오염시켰다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/KiFastCallEntryHook.png" alt="사진5" /></p>
+
+<p>먼저 IoGetStackLimits를 사용하여 현재 스래드의 범위를 획득하였다. 그런 다음 스택 밑 부분부터 현재 스택 위치까지의 전체 공간을 모두 0xAA로 채워넣었다.</p>
+
+<p>이렇게 되면 시스템 호출에 들어가면 스택이든 힙이든 커널의 지역변수의 내용은 모두 0xAA로 오염될 것이다.</p>
+
+<h2 id="커널-pool">커널 POOL</h2>
+
+<p>위와 유사하게 동적을 할당하는 메모리는 ExAllocatePoolWithTag 등을 후킹하여 풀 내용을 오염시켰다.</p>
+
+<p>이렇게 되면 스택이든 힙이든 초기화되지만 않는다면 안에 내용들이 우리에 의해 오염될 것이다.</p>
+
+<p>만약 커널의 스택/힙 변수가 올바르게 초기화되지 않았다면 우리의 magic value를 유저모드의 메모리에 쓰게될 것이다. 우리가 획득한 로그들을 종합하면 Info Leak 취약점을 바로 찾을 수 있다.</p>
+
+<p>우연한 경우를 제외하기 위해 우리의 Magic value를 여러 번 변경시켰다. 예를 들어 0xAAAAAAAA, 0xBBBBBBBB 이런식으로 잘못된 정보를 가려냈다.</p>
+
+<p>이런 간섭들을 제회한 다음 볼 수 있는 전형적인 결과는 아래와 같다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/magic.png" alt="사진6" /></p>
+
+<p>위에서 볼 수 있듯이 짧은 모니터링 과정에서도 시스템에서 발생한 161번의 릭을 캡처할 수 있었다.</p>
+
+<p>당연하지만 아직 중복된 부분은 제외하지 않았으며 독립적인 취약점이 이렇게 많다는 것도 아니였다. 그저 어떤 취약점들이 반복적으로 릭을 하고 있었다.</p>
+
+<p>이 때 우리가 발견한 진정한 Info Leak 취약점은 힙/스택의 정보가 있었으며 간단한 수동적인 작업으로도 자세한 부분을 알 수 있었는 데 이것이 바로 우리가 발견한 CVE-2017-8482였다.</p>
+
+<h2 id="차이비교">차이비교</h2>
+
+<p>우리는 메모리를 오염한 후 Magic value를 탐색하는 방식으로 초기화되지 않은 힙/스택에 의한 커널 Info Leak 취약점을 발견하였다. 직접적으로 모듈, 오브젝트, POOL 주소 같은 핵심 정보를 직접적으로 유출하는 취약점의 경우 이런 방식으로는 발견할 수 없다.</p>
+
+<p>시스템 실행 과정에서 커널 자체에서는 유저모드 메모리에 데이터를 빈번하게 쓴다. 많은 데이터가 커널 주소 범위 내를 가리키고 있지만 실질적으로 유효한 주소가 아니며 일종의 쓰레기 데이터이다.</p>
+
+<p>문자열, 해상도, 위치정보 등 우연히 커널쪽 주소를 가리키고 있는 데이터가 매우 많으며 우리는 이런 쓰레기 데이터를 걸러내고 진정한 릭된 데이터를 찾아야 한다.</p>
+
+<p>우리는 아래와 같은 의미 있는 데이터를 필터링할 것이다.</p>
+
+<ol>
+  <li>모듈 주소, 무조건 커널 모듈 범위내에 존재해야 한다.</li>
+  <li>오브젝트 주소</li>
+  <li>풀 주소</li>
+</ol>
+
+<p>시스템을 리부트 시키는 것과 같이 시스템의 환경이 변해도 같은 자리에 같은 데이터가 존재해야 한다.</p>
+
+<p>NtQuerySystemInformation 같은 시스템의 정상적인 기능을 제외한 회득한 데이터의 신뢰도는 매우 높을 것이다.</p>
+
+<h2 id="모듈-주소-릭">모듈 주소 릭</h2>
+
+<p>CVE-2017-8485를 예시로 이후에 획득한 데이터의 결과를 비교할 것이다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/diff.png" alt="사진8" /></p>
+
+<p>여기서 볼 수 있듯이 결과물은 매우 직관적이다. 같은 힙/스택의 유출 위치는 모두 같으며 모두 nt!PbpreferenceObjectByHandleWithTag+0x19f이다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/vul1_detail.png" alt="사진9" /></p>
+
+<h2 id="오브젝트-주소-릭">오브젝트 주소 릭</h2>
+
+<p>오브젝트 주소와 풀 주소를 릭하는 취약점은 이번달 마이크로소프트에서 패치를 발표하지 않았기 때문에 자세한 내용을 다룰 수 없다.</p>
+
+<p>하나의 예시를 볼수는 있는 데 어떤 함수에서 같은 오브젝트의 주소를 릭할 수 있었다.</p>
+
+<p>언급할 만한 것은 힙/스택에서 데이터를 복사함으로써 발생하는 것이 아닌 취약점은 힙/스택 오염 방법으로 발견할 수 없다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/object.png" alt="사진9" /></p>
+
+<h2 id="마지막으로">마지막으로</h2>
+
+<p>보다시피 우리는 전문적인 퍼저를 사용하지 않고 시스템 자체에서 실행하는 코드를 덮음으로써 이런 취약점을 발견하였다.</p>
+
+<p>모든 프로그램이 정상적으로 실행된다며 이 커버리지를 높일 것이다.</p>
+
+<p>사실상, 실질적인 발굴 과정에서 우리는 그저 게임과 브라우저를 사용하는 방법으로도 괜찮은 효과를 보았다. 게임 한 판을 하면 10개의 커널 취약점을 찾을 수 있다.</p>
+
+<p><img src="http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/game.jpg" alt="사진10" /></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-07-26T14:35:00+09:00">July 26, 2018</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/etc/Awesome-Links/" class="pagination--pager" title="관심있는 링크들 정리
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Fandu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

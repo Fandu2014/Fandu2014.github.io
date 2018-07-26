@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2018-07-26T16:59:27+09:00</updated><id>http://0.0.0.0:4000/</id><title type="html">Fandu’s Blog</title><subtitle>최오리의 삽질일기</subtitle><author><name>Fandu</name><uri>http://fandu.tistory.com</uri></author><entry><title type="html">관심있는 링크들 정리</title><link href="http://0.0.0.0:4000/etc/Awesome-Links/" rel="alternate" type="text/html" title="관심있는 링크들 정리" /><published>2018-07-26T14:50:00+09:00</published><updated>2018-07-26T14:50:00+09:00</updated><id>http://0.0.0.0:4000/etc/Awesome-Links</id><content type="html" xml:base="http://0.0.0.0:4000/etc/Awesome-Links/">&lt;h1 id=&quot;basic-of-windows-kernel&quot;&gt;Basic of Windows Kernel&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.i.u-tokyo.ac.jp/edu/training/ss/lecture/new-documents/Lectures/00-WindowsKernelOverview/WindowsKernelOverview.pdf&quot;&gt;Windows Kernel Internals Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pasotech.altervista.org/windows_internals/Win32KSYS.pdf&quot;&gt;Windows Kernel Internals Win32k.sys&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://i-web.i.u-tokyo.ac.jp/edu/training/ss/lecture/new-documents/Lectures/06-IOArchitecture/IOArchitecture.pdf&quot;&gt;Windows Kernel Internals I/O Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://read.pudn.com/downloads11/ebook/48602/windows%20kernel/VirtualMemory.pdf&quot;&gt;Windows Kernel Internals Virtual Memory Manager&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://slideplayer.com/slide/8014139/&quot;&gt;Windows Kernel Internals Object Manager&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://index-of.es/Windows/winKernArchi/WindowsServices.pdf&quot;&gt;Windows Kernel Internals Windows Service Processes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sww-it.ru/wp-content/uploads/2011/University%20of%20Tokyo%20Windows%20Internals%20Lectures/09-Registry/Registry.pdf&quot;&gt;Windows Kernel Internals NT Registry Implementation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cs.fsu.edu/~zwang/files/cop4610/Fall2016/windows.pdf&quot;&gt;Architecture of the Windows Kernel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/windows/hardware/dn613957%28v=vs.85%29.aspx?f=255&amp;amp;MSPPError=-2147217396&quot;&gt;Locks, Deadlocks, and Synchronization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.osr.com/nt-insider/2015-issue3/the-state-of-synchronization/&quot;&gt;The State of Synchronization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/PeterHlavaty/deathnote-of-microsoft-windows-kernel&quot;&gt;DeathNote of Microsoft Windows Kernel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dokydoky.tistory.com/443&quot;&gt;Windows Kernel Pool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/huku-/research/wiki/Intel-CPU-security-features&quot;&gt;Intel CPU security features&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.technet.microsoft.com/mmpc/2017/01/13/hardening-windows-10-with-zero-day-exploit-mitigations/?platform=hootsuite&quot;&gt;Hardening Windows 10 with zero-day exploit mitigations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/enigma0x3/windows-operating-system-archaeology&quot;&gt;Windows Operating System Archaeology&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://msdn.microsoft.com/ko-kr/library/windows/hardware/ff554690(v=vs.85).aspx&quot;&gt;Windows 드라이버 시작 - msdn&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;kernel-exploitation&quot;&gt;Kernel Exploitation&lt;/h2&gt;
+&lt;h3 id=&quot;general&quot;&gt;General&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.blackhat.com/docs/us-17/wednesday/us-17-Schenk-Taking-Windows-10-Kernel-Exploitation-To-The-Next-Level%E2%80%93Leveraging-Write-What-Where-Vulnerabilities-In-Creators-Update.pdf&quot;&gt;TAKING WINDOWS 10 KERNEL EXPLOITATION TO THE NEXT LEVEL – LEVERAING WRITEWHAT-WHERE VULNERABILITIES IN CREATORS UPDATE&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://drive.google.com/file/d/0B3P18M-shbwrNWZTa181ZWRCclk/edit?pli=1&quot;&gt;Bypassing kernel ASLR Target : Windows 10&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://labs.nettitude.com/blog/analysing-the-null-securitydescriptor-kernel-exploitation-mitigation-in-the-latest-windows-10-v1607-build-14393/&quot;&gt;Analysing the NULL SecurityDescriptor kernel exploitation mitigation in the latest Windows 10 v1607 Build 14393	&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dokydoky.tistory.com/444&quot;&gt;[KR] Windows Kernel Exploit - Uninitialized Heap Variables(Paged Pool)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.welivesecurity.com/wp-content/uploads/2017/01/Windows-Exploitation-2016-A4.pdf&quot;&gt;Windows exploitation in 2016&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coresecurity.com/system/files/publications/2016/10/Abusing-GDI-Reloaded-ekoparty-2016_0.pdf&quot;&gt;Abusing GDI for ring0 exploit primitives&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/articles/system/116611.html&quot;&gt;巧用COM接口IARPUninstallStringLauncher绕过UAC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sam-b/windows_kernel_address_leaks&quot;&gt;Windows Kernel Address Leaks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cvr-data.blogspot.kr/2016/11/lpe-vulnerabilities-exploitation-on.html&quot;&gt;LPE vulnerabilities exploitation on Windows 10 Anniversary Update&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md&quot;&gt;Windows Privilege Escalation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sensepost.com/blog/2017/abusing-gdi-objects-for-ring0-primitives-revolution/&quot;&gt;Abusing GDI Objects for ring0 Primitives Revolution&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://2015.zeronights.org/assets/files/11-Tarakanov.pdf&quot;&gt;Direct X – Direct way to Microsoft Windows Kernel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://media.blackhat.com/eu-13/briefings/Liu/bh-eu-13-liu-advanced-heap-slides.pdf&quot;&gt;ADVANCED HEAP MANIPULATION IN WINDOWS 8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/SSRINCLee/ss-79766206&quot;&gt;윈도우 커널 익스플로잇&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.blackhat.com/docs/us-17/wednesday/us-17-Jurczyk-Bochspwn-Reloaded-Detecting-Kernel-Memory-Disclosure-With-X86-Emulation-And-Taint-Tracking.pdf&quot;&gt;Bochspwn&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;1-day&quot;&gt;1-day&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.exploit-db.com/docs/39665.pdf&quot;&gt;Windows Kernel Exploitation 101: Exploiting CVE-2014-4113&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.fortinet.com/2016/08/17/root-cause-analysis-of-windows-kernel-uaf-vulnerability-lead-to-cve-2016-3310&quot;&gt;Root Cause Analysis of Windows Kernel UAF Vulnerability lead to CVE-2016-3310&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://duo.com/assets/pdf/wow-64-and-so-can-you.pdf&quot;&gt;WoW64 and So Can You : Bypassing EMET With a Single Instruction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sensepost.com/blog/2017/exploiting-ms16-098-rgnobj-integer-overflow-on-windows-8.1-x64-bit-by-abusing-gdi-objects/&quot;&gt;Exploiting MS16-098 RGNOBJ Integer Overflow on Windows 8.1 x64 bit by abusing GDI objects&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.technet.microsoft.com/mmpc/2017/03/27/detecting-and-mitigating-elevation-of-privilege-exploit-for-cve-2017-0005/&quot;&gt;Detecting and mitigating elevation-of-privilege exploit for CVE-2017-0005&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tinysec/vulnerability&quot;&gt;kernel vulnerability&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/?p=3101&quot;&gt;Windows Kernel Local Denial-of-Service #1: win32k!NtUserThunkedMenuItemInfo (Windows 7-10)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/?p=3151&quot;&gt;Windows Kernel Local Denial-of-Service #2: win32k!NtDCompositionBeginFrame (Windows 8-10)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/?p=3187&quot;&gt;Windows Kernel Local Denial-of-Service #3: nt!NtDuplicateToken (Windows 7-8)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/?p=3225&quot;&gt;Windows Kernel Local Denial-of-Service #4: nt!NtAccessCheck and family (Windows 8-10)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/?p=3251&quot;&gt;Windows Kernel Local Denial-of-Service #5: win32k!NtGdiGetDIBitsInternal (Windows 7-10)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SecWiki/windows-kernel-exploits&quot;&gt;SecWiki/windows-kernel-exploits&lt;/a&gt; : fucking cool!!!!!&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Fandu2014/windows-kernel-exploits-1&quot;&gt;windows-kernel-exploits-1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.shellsec.com/news/48579.html&quot;&gt;内核漏洞进击之旅 – Dark Composition Exploitation Case Study&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cansecwest.com/slides/2017/CSW2017_PengQiu-ShefangZhong_win32k_dark_composition.pdf&quot;&gt;Win32k Dark Composition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://labs.mwrinfosecurity.com/assets/BlogFiles/mwri-mmap-exploitation-whitepaper-2017-09-18.pdf&quot;&gt;Kernel Driver mmap Handler Exploitation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cbayet/Exploit-CVE-2017-6008&quot;&gt;Exploit-CVE-2017-6008&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://hackability.kr/entry/Local-Exploit-Windows-NDPROXY-Local-SYSTEM-Privilege-Escalation-ZeroDay-CVE20135065&quot;&gt;[Local Exploit] Windows NDPROXY Local SYSTEM Privilege Escalation Zero-Day (CVE-2013-5065)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;solutions-of-hevd&quot;&gt;Solutions of HEVD&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sizzop.github.io/&quot;&gt;sizzop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blahcat.github.io/2017/08/18/first-exploit-in-windows-kernel-hevd/&quot;&gt;First exploit in Windows Kernel (HEVD)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;kernel-fuzzing&quot;&gt;Kernel Fuzzing&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://labs.mwrinfosecurity.com/assets/BlogFiles/mwri-fuzzing-the-windows-kernel.pdf&quot;&gt;FUZZING THE WINDOWS KERNEL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://labs.mwrinfosecurity.com/assets/BlogFiles/mwri-Platform-Agnostic-Kernel-Fuzzing-FINAL.pdf&quot;&gt;Platform Agnostic Kernel Fuzzing&lt;/a&gt; : cross platform fuzzer
+video : https://www.youtube.com/watch?v=rv5PqCEVG_U&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-schumilo.pdf&quot;&gt;kAFL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://media.blackhat.com/bh-eu-12/Lee/bh-eu-12-Lee-GDI_Font_Fuzzing-WP.pdf&quot;&gt;GDI Font Fuzzing in Windows Kernel for Fun&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fuzzinginfo.files.wordpress.com/2012/11/nagy-kernel.pdf&quot;&gt;Windows Kernel Fuzzing for Beginners&lt;/a&gt;
+video : https://www.reddit.com/r/fuzzing/comments/1n3h05/windows_kernel_fuzzing_for_beginners_ben_nagy/&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fuzzing.info/papers/&quot;&gt;fuzzing.info&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.darknet.org.uk/2010/12/ioctl-fuzzer-v1-2-fuzzing-tool-for-windows-kernel-drivers/&quot;&gt;IOCTL Fuzzer v1.2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://moflow.org/Presentations/Evolutionary%20Kernel%20Fuzzing-BH2017-rjohnson-FINAL.pdf&quot;&gt;Evolutionary Kernel Fuzzing&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;projectzeroall-interesting-articles&quot;&gt;ProjectZero(All interesting articles)&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugs.chromium.org/p/project-zero/issues/detail?id=180&amp;amp;can=1&amp;amp;q=CVE-2015-0093&quot;&gt;Windows Kernel ATMFD.DLL unlimited out-of-bounds stack manipulation via BLEND operator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugs.chromium.org/p/project-zero/issues/detail?id=177&amp;amp;redir=1&quot;&gt;Windows Kernel ATMFD.DLL read/write-what-where in LOAD and STORE operators&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugs.chromium.org/p/project-zero/issues/detail?id=1192&amp;amp;can=1&amp;amp;q&amp;amp;sort=-id&quot;&gt;Windows Kernel stack memory disclosure in win32kfull!SfnINLPUAHDRAWMENUITEM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/07/one-font-vulnerability-to-rule-them-all.html&quot;&gt;One font vulnerability to rule them all #1: Introducing the BLEND vulnerability&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/08/one-font-vulnerability-to-rule-them-all.html&quot;&gt;One font vulnerability to rule them all #2: Adobe Reader RCE exploitation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/08/one-font-vulnerability-to-rule-them-all_13.html&quot;&gt;One font vulnerability to rule them all #3: Windows 8.1 32-bit sandbox escape exploitation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/08/one-font-vulnerability-to-rule-them-all_21.html&quot;&gt;One font vulnerability to rule them all #4: Windows 8.1 64-bit sandbox escape exploitation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/08/windows-10hh-symbolic-link-mitigations.html&quot;&gt;Windows 10 Symbolic Link Mitigations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/10/windows-drivers-are-truely-tricky.html&quot;&gt;Windows Drivers are True’ly Tricky&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2015/11/windows-sandbox-attack-surface-analysis.html&quot;&gt;Windows Sandbox Attack Surface Analysis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/01/raising-dead.html&quot;&gt;Raising the Dead&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/02/the-definitive-guide-on-win32-to-nt.html&quot;&gt;The Definitive Guide on Win32 to NT Path Conversion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/03/exploiting-leaked-thread-handle.html&quot;&gt;Exploiting a Leaked Thread Handle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/03/race-you-to-kernel.html&quot;&gt;Race you to the kernel!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/06/exploiting-recursion-in-linux-kernel_20.html&quot;&gt;Exploiting Recursion in the Linux Kernel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/06/a-year-of-windows-kernel-font-fuzzing-1_27.html&quot;&gt;A year of Windows kernel font fuzzing #1: the results&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/07/a-year-of-windows-kernel-font-fuzzing-2.html&quot;&gt;A year of Windows kernel font fuzzing #2: the techniques&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2016/11/breaking-chain.html&quot;&gt;Breaking the Chain&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2017/02/attacking-windows-nvidia-driver.html&quot;&gt;Attacking the Windows NVIDIA Driver&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2017/04/notes-on-windows-uniscribe-fuzzing.html&quot;&gt;Notes on Windows Uniscribe Fuzzing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2017/04/exploiting-net-managed-dcom.html&quot;&gt;Exploiting .NET Managed DCOM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2017/08/windows-exploitation-tricks-arbitrary.html&quot;&gt;Windows Exploitation Tricks: Arbitrary Directory Creation to Arbitrary File Read&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleprojectzero.blogspot.kr/2017/10/using-binary-diffing-to-discover.html&quot;&gt;Using Binary Diffing to Discover Windows Kernel Memory Disclosure Bugs&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;chinese-articles-awesome-chinese-hackers&quot;&gt;Chinese articles (Awesome Chinese Hackers!!!)&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/147114.html&quot;&gt;Windows内核存在漏洞，影响Windows2000到Windows10所有版本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/103064.html&quot;&gt;Windows内核漏洞CVE-2016-0143分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/articles/web/99512.html&quot;&gt;使用WinDbg调试Windows内核(一)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/articles/network/99856.html&quot;&gt;使用WinDbg调试Windows内核(二)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/90501.html&quot;&gt;Windows内核漏洞MS15-010/CVE-2015-0057分析及利用（含EXP）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/news/82310.html&quot;&gt;Win10Pcap-Exploit：利用Win10Pcap内核驱动程序漏洞实现本地提权&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/48239.html&quot;&gt;Win64bit提权0day漏洞（CVE-2014-4113）只是内核模式漏洞的开始&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/18856.html&quot;&gt;补丁上的漏洞：微软NDProxy.sys内核漏洞金山毒霸防御绕过（视频）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/9766.html&quot;&gt;Windows内核EPATHOBJ 0day漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/vuls/6457.html&quot;&gt;Intel Sysret (CVE-2012-0217)内核提权漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freebuf.com/news/5792.html&quot;&gt;研究人员发现针对Win8的新型内核级漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blogs.360.cn/blog/poc_edgesandboxbypass_win10th2_new_security_features/&quot;&gt;Edge Sandbox绕过后续及Windows 10 TH2新安全特性&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blogs.360.cn/blog/hacking-team-part5-atmfd-0day-2/&quot;&gt;Hacking Team攻击代码分析Part5: Adobe Font Driver内核权限提升漏洞第二弹+Win32k KALSR绕过漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blogs.360.cn/blog/fixed_three_0days_in_may/&quot;&gt;谈谈15年5月修复的三个0day&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blogs.360.cn/blog/windows10_font_security_mitigations/&quot;&gt;Windows10安全增强：Build 9926引入的两个字体安全特性&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blogs.360.cn/blog/ntapphelpcachecontrol_vulnerability_anaysis/&quot;&gt;NtApphelpCacheControl漏洞分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blogs.360.cn/blog/%E8%B0%88%E4%B8%80%E4%B8%AAkernel32%E5%BD%93%E4%B8%AD%E7%9A%84ansi%E5%88%B0unicode%E8%BD%AC%E6%8D%A2%E7%9A%84%E9%97%AE%E9%A2%98/&quot;&gt;谈一个Kernel32当中的ANSI到Unicode转换的问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/&quot;&gt;自动化挖掘 windows 内核信息泄漏漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.ioin.in/writeup/lab.seclover.com/6499df39-b0a3-42de-85ce-cd5e21b075a4/index.html&quot;&gt;CVE-2016-3308 / ZDI-16-453 Microsoft Windows内核提权漏洞原理分析与利用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4591.html&quot;&gt;【技术分享】用户模式下基于异常和内核控制的线程级钩子技术分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4477.html&quot;&gt;【技术分享】利用WinDbg本地内核调试器攻陷 Windows 内核&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4439.html&quot;&gt;技术分享】Windows内核池喷射的乐趣&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4434.html&quot;&gt;【技术分享】瓮中之鳖：Windows内核池混合对象利用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4384.html&quot;&gt;【技术分享】Windows内核Pool溢出漏洞：组合对象的Spray利用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4221.html&quot;&gt;【技术分享】内核池溢出漏洞利用实战之Windows 10篇&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4188.html&quot;&gt;【技术分享】内核池溢出漏洞利用实战之Windows 7篇&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4066.html&quot;&gt;【技术分享】Windows内核池漏洞利用技术&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/4002.html&quot;&gt;【技术分享】Windows内核利用之旅：熟悉HEVD（附视频演示）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3921.html&quot;&gt;【技术分享】Windows内核池喷射&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3712.html&quot;&gt;【技术分享】Windows 内核攻击：栈溢出&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3647.html&quot;&gt;【技术分享】如何利用Windows默认内核调试配置实现代码执行并获取管理员权限&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3575.html&quot;&gt;【技术分享】探索基于Windows 10的Windows内核Shellcode（Part 1）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3593.html&quot;&gt;【技术分享】探索基于Windows 10的Windows内核Shellcode（Part 2）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3624.html&quot;&gt;技术分享】探索基于Windows 10的Windows内核Shellcode（Part 3）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3643.html&quot;&gt;【技术分享】探索基于Windows 10的Windows内核Shellcode（Part 4）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3570.html&quot;&gt;【技术分享】HEVD内核漏洞训练之SMEP绕过&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3565.html&quot;&gt;【技术分享】通过内核地址保护措施，回顾Windows安全加固技术&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3544.html&quot;&gt;技术分享】HEVD内核漏洞训练——陪Windows玩儿&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3384.html&quot;&gt;【技术分享】从MS16-098看Windows 8.1内核漏洞利用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3376.html&quot;&gt;【技术分享】Windows exploit开发系列教程：内核利用- &amp;gt;内存池溢出&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3359.html&quot;&gt;【漏洞分析】	CVE-2016-7255：分析挖掘Windows内核提权漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3184.html&quot;&gt;【技术分享】经典内核漏洞调试笔记之二&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3170.html&quot;&gt;技术分享】经典内核漏洞调试笔记&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3153.html&quot;&gt;【漏洞分析】MS16-124：微软内核整型溢出漏洞&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3024.html&quot;&gt;Microsoft Windows内核提权漏洞原理分析与利用(CVE-2016-3308 / ZDI-16-453)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/2989.html&quot;&gt;Windows 8.1内核利用—CVE-2014-4113漏洞分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/3017.html&quot;&gt;【技术分享】CVE-XX-XX：“Atom截胡”Windows内核提权漏洞分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bobao.360.cn/learning/detail/118.html&quot;&gt;MS14-063（CVE-2014-4115）FAT32驱动内核溢出分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.anquanke.com/post/id/87334&quot;&gt;MS17-017 Windows内核提权漏洞Exploit分析&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;other-useful-links&quot;&gt;Other useful links&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.fuzzysecurity.com/tutorials.html&quot;&gt;fuzzysecurity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ufrisk/kaslrfinder&quot;&gt;KASLRfinder&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/&quot;&gt;j00ru&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/syscalls/nt/32/&quot;&gt;Windows X86 System Call Table&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/syscalls/nt/64/&quot;&gt;Windows X86-64 System Call Table&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/syscalls/win32k/32/&quot;&gt;Windows WIN32K.SYS System Call Table&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://j00ru.vexillium.org/syscalls/win32k/64/&quot;&gt;Windows x86-64 WIN32K.SYS System Call Table&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.rewolf.pl/blog/?p=1739&quot;&gt;HomePosts archiveContact GoGoGadget – kernel exploitation helper class&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://shovelman.tistory.com/&quot;&gt;shovelMan&lt;/a&gt; : Not ningan&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Fandu</name><uri>http://fandu.tistory.com</uri></author><summary type="html">Basic of Windows Kernel Windows Kernel Internals Overview Windows Kernel Internals Win32k.sys Windows Kernel Internals I/O Architecture Windows Kernel Internals Virtual Memory Manager Windows Kernel Internals Object Manager Windows Kernel Internals Windows Service Processes Windows Kernel Internals NT Registry Implementation Architecture of the Windows Kernel Locks, Deadlocks, and Synchronization The State of Synchronization DeathNote of Microsoft Windows Kernel Windows Kernel Pool Intel CPU security features Hardening Windows 10 with zero-day exploit mitigations Windows Operating System Archaeology Windows 드라이버 시작 - msdn</summary></entry><entry><title type="html">윈도우 커널 Info Leak 취약점 발굴 자동화</title><link href="http://0.0.0.0:4000/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%BB%A4%EB%84%90-Info-Leak-%EC%B7%A8%EC%95%BD%EC%A0%90-%EB%B0%9C%EA%B5%B4-%EC%9E%90%EB%8F%99%ED%99%94/" rel="alternate" type="text/html" title="윈도우 커널  Info Leak 취약점 발굴 자동화" /><published>2018-07-26T14:35:00+09:00</published><updated>2018-07-26T14:35:00+09:00</updated><id>http://0.0.0.0:4000/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%BB%A4%EB%84%90-Info-Leak-%EC%B7%A8%EC%95%BD%EC%A0%90-%EB%B0%9C%EA%B5%B4-%EC%9E%90%EB%8F%99%ED%99%94</id><content type="html" xml:base="http://0.0.0.0:4000/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%BB%A4%EB%84%90-Info-Leak-%EC%B7%A8%EC%95%BD%EC%A0%90-%EB%B0%9C%EA%B5%B4-%EC%9E%90%EB%8F%99%ED%99%94/">&lt;p&gt;원문 : &lt;a href=&quot;https://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;시작&quot;&gt;시작&lt;/h2&gt;
+
+&lt;p&gt;2017년 6월에 우리가 이전에 제보한 6개의 커널 Info Leak 취약점을 패치하였고 글 뒷 부분에 이에 대한 자세한 내용이 나와있다. 작년에 필자는 JS를 사용하여 어떻게 커널을 퍼징하는 지 시연하였다. 오늘날 우리들이 가져온 것은 퍼징에 의존하지 않고 커널 Info Leak 취약점을 자동으로 찾아주는 것이다. 최근 몇 달 동안의 작업들 중 일부이며 커널에서 Info Leak 유형의 취약점을 어떻게 찾는 지에 대해 얘기해보도록 하겠다.&lt;/p&gt;
+
+&lt;h2 id=&quot;배경&quot;&gt;배경&lt;/h2&gt;
+
+&lt;p&gt;Windows vista 이후에 마이크로소프트는 커널에 디폴트로 ASLR을 활성화 해두었고 이를 KASLR이라고 불렀다. KASLR은 모듈의 로딩 주소, 커널 오브젝트의 주소를 렌덤마이징하여 미티게이션을 강화하였다.&lt;/p&gt;
+
+&lt;p&gt;윈도우8 이후에는 이 보안 특성이 한단계 강화되었다.
+nt!ExIsRestrictedCaller를 도입하여 Low Integrity인 프로그램이 모듈 주소, 커널 오브젝트 주소 등 핵심 정보를 릭할 수 있는 함수에 대한 호출을 막았다.&lt;/p&gt;
+
+&lt;p&gt;하지만 아래 함수들은 예외이다.&lt;/p&gt;
+
+&lt;p&gt;NtQuerySystemInformation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SystemModuleInformation&lt;/li&gt;
+  &lt;li&gt;SystemModuleInformationEx&lt;/li&gt;
+  &lt;li&gt;SystemLocksInformation&lt;/li&gt;
+  &lt;li&gt;SystemStackTraceInformation&lt;/li&gt;
+  &lt;li&gt;SystemHandleInformation&lt;/li&gt;
+  &lt;li&gt;SystemExtendedHandleInformation&lt;/li&gt;
+  &lt;li&gt;SystemObjectInformation&lt;/li&gt;
+  &lt;li&gt;SystemBigPoolInformation&lt;/li&gt;
+  &lt;li&gt;SystemSessionBigPoolInformation&lt;/li&gt;
+  &lt;li&gt;SystemProcessInformation&lt;/li&gt;
+  &lt;li&gt;SystemFullProcessInformation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;NtQueryInfomationThread
+NtQueryInfomationProcess&lt;/p&gt;
+
+&lt;p&gt;위 함수들은 사용하는 것은 커널의 정상적인 기능으로써 커널 모듈 주소와 커널 오브젝트 주소를 획득하는 전통적인 방법이다.
+그러나 integrity가 medium 이하인 프로그램은 윈도우 8 이후의 운영체제에서는 호출을 실패하게 된다.
+ksalr은 미티게이션 중 하나로써 이것의 목적 중 하나는 일반적인 ROP-CHAIN을 제작하기 더욱 어렵게 하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;익스플로잇을 하는 사람으로써 얘기하자면 Info Leak 취약점을 찾아서 필요한 모듈의 주소를 직접적으로 릭해오는 것이 KASLR을 우회할 수 있는 방법이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
+
+&lt;p&gt;커널 취약점의 한 종류로써 발굴하는 과정 중에 조금 특별한 부분이 있다. 예를 들어서 전통적인 메모리 커럽션 취약점은 취약점 자체가 시스템의 정상적인 실행에 영향을 주기 때문에 verifier 등 툴을 사용하여 아주 편리하게 크래시를 잡을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그러나 Info Leak 취약점의 경우, 이상이 발생하지 않으며 시스템의 정상적인 실행에도 영향을 주지 않는다. 따라서 이를 발견하기에는 비교적 어렵다.&lt;/p&gt;
+
+&lt;p&gt;취약점은 객관적으로 존재하지만 우리가 해야할 것은 최소한의 노력으로 이들을 발견하는 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;발굴-아이디어&quot;&gt;발굴 아이디어&lt;/h2&gt;
+
+&lt;p&gt;취약점이 발생할 때, 커널은 핵심적인 정보를 유저모드 메모리에 저장한다. 만약 우리가 모든 커널 모드에서 유저모드 주소로 쓰는 작업을 모니터링한다면 이 작업을 캡처할 수 있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;시스템에서는 이러한 기능을 제공하지 않기 때문에 @pjf의 하드웨어 가상화 기반의 발굴 프레임워크(???)를 통해 이를 구현할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/DigTool.png&quot; alt=&quot;사진1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;타겟 시스템 자체의 작업들을 간섭하지 않기 위해서 필자는 가상머신에서 모니터링을 진행하였으며 필요한 정보를 획득하고 이를 log에 저장한 다음 다시 이를 호스트 컴퓨터에서 분석하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/loader.png&quot; alt=&quot;사진2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;호스트컴에서 로그를 디코딩하고 심볼을 업로드한 다음 일부 처리를 진행하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/analyze.png&quot; alt=&quot;사진3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그럼 아래와 같은 로그를 획득할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/log.png&quot; alt=&quot;사진4&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2차-분석&quot;&gt;2차 분석&lt;/h2&gt;
+
+&lt;p&gt;이제 우리는 실제 실행 과정에서 커널이 유저모드 메모리에 쓰는 모든 기록들을 가지고 있다. 여기에서 대부분은 정상적인 기능일 테지만 우리는 필요없는 것들은 제외하고 핵심 정보들을 골라내야 한다. 여기에서는 주로 두 가지 기법을 사용한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;커널-스택-포이즈닝&quot;&gt;커널 스택 포이즈닝&lt;/h3&gt;
+
+&lt;p&gt;타겟 데이터를 포이즈닝 혹은 오염시키는 것은 흔한 아이디어이다. 네트워크 공격과 방어쪽으로 보면 ARP와 DNS 버퍼에 대한 포이즈닝이 존재한다.—&amp;gt; 뭔소리지 뭐라고 번역해야하지&lt;/p&gt;
+
+&lt;p&gt;여기에서 얘기하는 커널 스택 오렴은 사용되지 않은 커널 스택 공간 전체를 오염시킨다는 것이다. 만약 어떤 커널 스택 상에 초기화되지 않은 값이 존재하고 이 변수를 유저모드 메모리에 쓰게되면 이 때 써지는 데이터가 바로 우리가 표기한 magic value가 될 것이다. 이 magic value를 찾아내 기록하는 것이 릭이 발생하는 지점이다.&lt;/p&gt;
+
+&lt;p&gt;동시에 필자는 j00ru가 BochsPwn에도 유사한 기술을 사용한 것을 발견하였다.&lt;/p&gt;
+
+&lt;h2 id=&quot;kifastcallentry-hook&quot;&gt;KiFastCallEntry Hook&lt;/h2&gt;
+
+&lt;p&gt;기회가 될 때마다 커널 스택을 오염시키기 위해서 필자는 KiFastCallEntry를 후깅하였다. 이를 통해 매번 시스템 호출이 발생될 때 현재 스택 밑에 모든 남은 스택 공간을 오염시켰다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/KiFastCallEntryHook.png&quot; alt=&quot;사진5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼저 IoGetStackLimits를 사용하여 현재 스래드의 범위를 획득하였다. 그런 다음 스택 밑 부분부터 현재 스택 위치까지의 전체 공간을 모두 0xAA로 채워넣었다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 되면 시스템 호출에 들어가면 스택이든 힙이든 커널의 지역변수의 내용은 모두 0xAA로 오염될 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;커널-pool&quot;&gt;커널 POOL&lt;/h2&gt;
+
+&lt;p&gt;위와 유사하게 동적을 할당하는 메모리는 ExAllocatePoolWithTag 등을 후킹하여 풀 내용을 오염시켰다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 되면 스택이든 힙이든 초기화되지만 않는다면 안에 내용들이 우리에 의해 오염될 것이다.&lt;/p&gt;
+
+&lt;p&gt;만약 커널의 스택/힙 변수가 올바르게 초기화되지 않았다면 우리의 magic value를 유저모드의 메모리에 쓰게될 것이다. 우리가 획득한 로그들을 종합하면 Info Leak 취약점을 바로 찾을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;우연한 경우를 제외하기 위해 우리의 Magic value를 여러 번 변경시켰다. 예를 들어 0xAAAAAAAA, 0xBBBBBBBB 이런식으로 잘못된 정보를 가려냈다.&lt;/p&gt;
+
+&lt;p&gt;이런 간섭들을 제회한 다음 볼 수 있는 전형적인 결과는 아래와 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/magic.png&quot; alt=&quot;사진6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위에서 볼 수 있듯이 짧은 모니터링 과정에서도 시스템에서 발생한 161번의 릭을 캡처할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;당연하지만 아직 중복된 부분은 제외하지 않았으며 독립적인 취약점이 이렇게 많다는 것도 아니였다. 그저 어떤 취약점들이 반복적으로 릭을 하고 있었다.&lt;/p&gt;
+
+&lt;p&gt;이 때 우리가 발견한 진정한 Info Leak 취약점은 힙/스택의 정보가 있었으며 간단한 수동적인 작업으로도 자세한 부분을 알 수 있었는 데 이것이 바로 우리가 발견한 CVE-2017-8482였다.&lt;/p&gt;
+
+&lt;h2 id=&quot;차이비교&quot;&gt;차이비교&lt;/h2&gt;
+
+&lt;p&gt;우리는 메모리를 오염한 후 Magic value를 탐색하는 방식으로 초기화되지 않은 힙/스택에 의한 커널 Info Leak 취약점을 발견하였다. 직접적으로 모듈, 오브젝트, POOL 주소 같은 핵심 정보를 직접적으로 유출하는 취약점의 경우 이런 방식으로는 발견할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;시스템 실행 과정에서 커널 자체에서는 유저모드 메모리에 데이터를 빈번하게 쓴다. 많은 데이터가 커널 주소 범위 내를 가리키고 있지만 실질적으로 유효한 주소가 아니며 일종의 쓰레기 데이터이다.&lt;/p&gt;
+
+&lt;p&gt;문자열, 해상도, 위치정보 등 우연히 커널쪽 주소를 가리키고 있는 데이터가 매우 많으며 우리는 이런 쓰레기 데이터를 걸러내고 진정한 릭된 데이터를 찾아야 한다.&lt;/p&gt;
+
+&lt;p&gt;우리는 아래와 같은 의미 있는 데이터를 필터링할 것이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;모듈 주소, 무조건 커널 모듈 범위내에 존재해야 한다.&lt;/li&gt;
+  &lt;li&gt;오브젝트 주소&lt;/li&gt;
+  &lt;li&gt;풀 주소&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;시스템을 리부트 시키는 것과 같이 시스템의 환경이 변해도 같은 자리에 같은 데이터가 존재해야 한다.&lt;/p&gt;
+
+&lt;p&gt;NtQuerySystemInformation 같은 시스템의 정상적인 기능을 제외한 회득한 데이터의 신뢰도는 매우 높을 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;모듈-주소-릭&quot;&gt;모듈 주소 릭&lt;/h2&gt;
+
+&lt;p&gt;CVE-2017-8485를 예시로 이후에 획득한 데이터의 결과를 비교할 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/diff.png&quot; alt=&quot;사진8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 볼 수 있듯이 결과물은 매우 직관적이다. 같은 힙/스택의 유출 위치는 모두 같으며 모두 nt!PbpreferenceObjectByHandleWithTag+0x19f이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/vul1_detail.png&quot; alt=&quot;사진9&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;오브젝트-주소-릭&quot;&gt;오브젝트 주소 릭&lt;/h2&gt;
+
+&lt;p&gt;오브젝트 주소와 풀 주소를 릭하는 취약점은 이번달 마이크로소프트에서 패치를 발표하지 않았기 때문에 자세한 내용을 다룰 수 없다.&lt;/p&gt;
+
+&lt;p&gt;하나의 예시를 볼수는 있는 데 어떤 함수에서 같은 오브젝트의 주소를 릭할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;언급할 만한 것은 힙/스택에서 데이터를 복사함으로써 발생하는 것이 아닌 취약점은 힙/스택 오염 방법으로 발견할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/object.png&quot; alt=&quot;사진9&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;마지막으로&quot;&gt;마지막으로&lt;/h2&gt;
+
+&lt;p&gt;보다시피 우리는 전문적인 퍼저를 사용하지 않고 시스템 자체에서 실행하는 코드를 덮음으로써 이런 취약점을 발견하였다.&lt;/p&gt;
+
+&lt;p&gt;모든 프로그램이 정상적으로 실행된다며 이 커버리지를 높일 것이다.&lt;/p&gt;
+
+&lt;p&gt;사실상, 실질적인 발굴 과정에서 우리는 그저 게임과 브라우저를 사용하는 방법으로도 괜찮은 효과를 보았다. 게임 한 판을 하면 10개의 커널 취약점을 찾을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.iceswordlab.com/2017/06/14/Automatically-Discovering-Windows-Kernel-Information-Leak-Vulnerabilities_zh/game.jpg&quot; alt=&quot;사진10&quot; /&gt;&lt;/p&gt;</content><author><name>Fandu</name><uri>http://fandu.tistory.com</uri></author><summary type="html">원문 : 링크</summary></entry></feed>
